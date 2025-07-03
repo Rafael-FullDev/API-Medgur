@@ -10,11 +10,13 @@ public class CorsConfig {
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
+        System.out.println("🚀 CorsConfig carregado!");
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/")
                         .allowedOrigins(
+                                "http://localhost:5173",
                                 "https://front-medgur-teste.vercel.app"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
